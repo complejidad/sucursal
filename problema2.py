@@ -26,7 +26,7 @@ print (mens2)
 axs=open('articulosXsucursal.txt','r')
 mens3=[]
 i=0
-ceros=[]
+aux=[]
 for line in axs:
 	mens3.append(line.split(","))
 	mens3[i].pop(4)
@@ -35,18 +35,30 @@ for line in axs:
 	mens3[i][2]=int(mens3[i][2])
 	mens3[i][3]=int(mens3[i][3])
 	i=i+1 
-	ceros.append(0)
+	aux.append([0,0])
 print (mens3)
 
-for i in range (0,len(mens3)):
-	if mens3[i][3]==0:
-		c=mens3[i][2]
-		ceros.insert(mens3[i][1],c)
-	elif mens3[i][3]>5:
-		if len(ceros)>mens3[i][1]:
-			if ceros[mens3[i][1]] is not None:
-				print(mens2[mens3[i][1]-1][1])
-				ceros[mens3[i][1]]=0
-print ('ceros')
-print (ceros)
-
+sal=[]
+naxs=len(mens3)
+for i in range (0,naxs):
+	codart=mens3[i][1]
+	codsuc=mens3[i][2]
+	cant=mens3[i][3]
+	cantaux=aux[codart][1]
+	sucaux=aux[codart][0]
+	if cant==0:
+		if cantaux>5:
+			sal.append([codsuc,codart,mens2[codart-1][1]])
+			cantaux=None		
+		else:
+			aux[codart]=[codsuc,cant]
+	elif cant>5:
+		if cantaux==0 and sucaux!=0:
+			sal.append([sucaux,codart,mens2[codart-1][1]])
+			cantaux=None
+		else:
+			aux[codart]=[codsuc,cant]
+print ('auxiliar')
+print (aux)
+print ('salida')
+print (sal)
