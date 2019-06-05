@@ -37,8 +37,9 @@ for line in axs:
 	i=i+1 
 	aux.append([0,0])
 print (mens3)
-
-sal=[]
+salida=open('Infsal.txt', 'w')
+salida.write("Articulos reponible \r\n")
+salida.write("CodSuc - CodArt - Nombre Articulo \n")
 naxs=len(mens3)
 for i in range (0,naxs):
 	codart=mens3[i][1]
@@ -48,17 +49,21 @@ for i in range (0,naxs):
 	sucaux=aux[codart][0]
 	if cant==0:
 		if cantaux>5:
-			sal.append([codsuc,codart,mens2[codart-1][1]])
+			salida.write("%5i \t %5i \t %s \n" % (codsuc,codart,mens2[codart-1][1]) ) 
 			cantaux=None		
 		else:
 			aux[codart]=[codsuc,cant]
 	elif cant>5:
 		if cantaux==0 and sucaux!=0:
-			sal.append([sucaux,codart,mens2[codart-1][1]])
+			salida.write("%5i \t %5i \t %s \n" % (sucaux,codart,mens2[codart-1][1]) ) 
 			cantaux=None
 		else:
 			aux[codart]=[codsuc,cant]
 print ('auxiliar')
 print (aux)
-print ('salida')
-print (sal)
+
+ 
+salida.close()
+suc.close()
+art.close()
+axs.close()
