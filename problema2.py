@@ -38,7 +38,7 @@ for line in axs:
 	aux.append([0,0])
 print (mens3)
 salida=open('Infsal.txt', 'w')
-salida.write("Articulos reponible \r\n")
+salida.write("Articulos a reponer \r\n")
 salida.write("CodSuc - CodArt - Nombre Articulo \n")
 naxs=len(mens3)
 for i in range (0,naxs):
@@ -61,7 +61,6 @@ for i in range (0,naxs):
 			aux[codart]=[codsuc,cant]
 print ('auxiliar')
 print (aux)
-
  
 salida.close()
 suc.close()
