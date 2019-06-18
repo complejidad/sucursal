@@ -9,9 +9,7 @@ for line in suc:
 	mens1[i][0]=int(mens1[i][0])
 	i=i+1 
 print (mens1)
-#mens=(f.readline().split(","))
-#mens.pop(2)
-#print (mens)
+
 art=open('articulos.txt','r')
 mens2=[]
 i=0
@@ -49,13 +47,13 @@ for i in range (0,naxs):
 	sucaux=aux[codart][0]
 	if cant==0:
 		if cantaux>5:
-			salida.write("%5i \t %5i \t %s \n" % (codsuc,codart,mens2[codart-1][1]) ) 
+			salida.write("%5i \t %7i \t %s \n" % (codsuc,codart,mens2[codart-1][1]) ) 
 			cantaux=None		
 		else:
 			aux[codart]=[codsuc,cant]
 	elif cant>5:
 		if cantaux==0 and sucaux!=0:
-			salida.write("%5i \t %5i \t %s \n" % (sucaux,codart,mens2[codart-1][1]) ) 
+			salida.write("%5i \t %7i \t %s \n" % (sucaux,codart,mens2[codart-1][1]) ) 
 			cantaux=None
 		else:
 			aux[codart]=[codsuc,cant]

@@ -1,6 +1,6 @@
-Articulos reponible 
+Articulos a reponer 
 CodSuc - CodArt - Nombre Articulo 
-  102 	     2 	  Yerba Mate Romance Suave x 1kg 
-  101 	    10 	  Te Big Ben x 25 U 
-  103 	    13 	  Ketchup Cada Dia x250 gr 
-  122 	    14 	  Aceite Mazola x900 cc 
+  102 	     2 	 Yerba Mate Romance Suave x 1kg 
+  101 	    10 	 Te Big Ben x 25 U 
+  103 	    13 	 Ketchup Cada Dia x250 gr 
+  122 	    14 	 Aceite Mazola x900 cc 
